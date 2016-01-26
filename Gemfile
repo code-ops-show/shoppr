@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# assets
+gem 'bootstrap-sass'
+
 gem 'solidus', github: 'solidusio/solidus', branch: 'master'
 gem 'solidus_auth_devise'
 

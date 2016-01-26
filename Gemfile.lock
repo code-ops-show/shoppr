@@ -100,11 +100,17 @@ GEM
       activerecord (>= 3.0)
     addressable (2.4.0)
     arel (6.0.3)
+    autoprefixer-rails (6.3.1)
+      execjs
+      json
     awesome_nested_set (3.0.3)
       activerecord (>= 4.0.0, < 5)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     bourbon (4.2.6)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -318,6 +324,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
