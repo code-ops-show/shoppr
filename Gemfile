@@ -29,7 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # assets
 gem 'bootstrap-sass'
 
-gem 'solidus', github: 'solidusio/solidus', branch: 'master'
+gem 'solidus'
 gem 'solidus_auth_devise'
 
 # Use Unicorn as the app server
@@ -41,6 +41,7 @@ gem 'solidus_auth_devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-rails'
 end
 
 group :development do
