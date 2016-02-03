@@ -1,4 +1,4 @@
-Spree::StoreController.class_eval do
+class Spree::StoreController
   before_filter :load_taxonomies
 
   def load_taxonomies
