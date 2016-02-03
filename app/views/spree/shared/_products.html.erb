@@ -33,8 +33,9 @@
             </div>
             <div class='caption'>
               <h3>
-                <%= truncate(product.name, length: 50) %>
+                <%= link_to truncate(product.name, length: 50), url, class: 'info', itemprop: "name", title: product.name  %>
               </h3>
+              <p><%= truncate((product_description(product) rescue Spree.t(:product_has_no_description)), length: 100) %></p>
               <%= link_to url, class: 'btn btn-primary' do %>
                 <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                   <span class="price selling" itemprop="price"><%= display_price(product) %>
