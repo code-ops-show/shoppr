@@ -1,0 +1,26 @@
+
+<!--
+<header id="header" class="row" data-hook>
+  <%#= render :partial => 'spree/shared/nav_bar' %>
+  <%#= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+</header> -->
+
+<nav class='navbar navbar-default navbar-static-top' role='navigation'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <figure id="logo" data-hook>
+        <%= logo img_options: { class: 'img-responsive', width: '138' }, link_options: { class: 'clearfix' } %>
+      </figure>
+    </div>
+    <%= content_tag :ul, class: 'nav navbar-nav' do %>
+      <% @taxonomies.each do |taxonomy| %>
+        <%= content_tag :li do %>
+          <%= link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' }, 'aria-haspopup' => 'true' do %>
+            <%= taxonomy.name %> <span class='caret'></span>
+          <% end %>
+          <%= nav_tree(taxonomy.root, @taxon) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</nav>
