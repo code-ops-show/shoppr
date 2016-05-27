@@ -1,0 +1,54 @@
+<% cache [I18n.locale, current_currency, @product] do %>
+  <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
+    <% @body_id = 'product-details' %>
+    <div class='row'>
+      <div class='col-md-12'>
+        <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-3' data-hook="product_left_part">
+        <div data-hook="product_left_part_wrap">
+          <div id="product-images" data-hook="product_images" >
+            <div id="main-image" data-hook>
+              <%= render :partial => 'image' %>
+            </div>
+            <div id="thumbnails" data-hook>
+              <%= render :partial => 'thumbnails' %>
+            </div>
+          </div>
+
+          <div data-hook="promotions">
+            <%= render :partial => 'promotions' %>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-3' data-hook="product_center_part">
+        <div data-hook='product_center_part_wrap'>
+          <div data-hook="product_properties">
+            <%= render :partial => 'properties' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" data-hook="product_right_part">
+        <h6 class="product-section-title"><%= Spree.t('detail')%></h6>
+        <div data-hook="product_right_part_wrap" class='panel panel-default'>
+          <div class='panel-body'>
+            <div id="product-description" data-hook="product_description">
+              <div itemprop="description" data-hook="description">
+                <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
+              </div>
+              <div id="cart-form" data-hook="cart_form">
+                <%= render :partial => 'cart_form' %>
+              </div>
+            </div>
+            <%= render :partial => 'taxons' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<% end %>
