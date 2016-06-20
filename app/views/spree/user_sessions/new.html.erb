@@ -1,0 +1,24 @@
+<% if flash[:alert] %>
+  <div class="flash errors"><%= flash[:alert] %></div>
+<% end %>
+
+<% @body_id = 'login' %>
+<div id='devise' class='row'>
+  <div class='col-md-4 col-md-offset-4'>
+    <div id="existing-customer" class='panel panel-default'>
+      <div class='panel-heading'>
+        <%= Spree.t(:login_as_existing) %>
+      </div>
+      <div data-hook="login" class='panel-body'>
+        <%= render :partial => 'spree/shared/login' %>
+        <hr>
+        <div class='row'>
+          <div class='col-md-10 col-md-offset-1'>
+          <%= link_to Spree.t(:create_a_new_account), spree.signup_path %> | <%= link_to Spree.t(:forgot_password), spree.recover_password_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-hook="login_extras"></div>
+  </div>
+</div>
