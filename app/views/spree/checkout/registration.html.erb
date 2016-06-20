@@ -20,7 +20,7 @@
                 <%= Spree.t(:guest_user_account) %>    
               </div>
               <% if flash[:registration_error] %>
-                <div class='flash error'><%= flash[:registration_error] %></div>
+                <div class='flash alert alert-error'><%= flash[:registration_error] %></div>
               <% end %>
               <%= form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f| %>
                 <div class='form-group'>
